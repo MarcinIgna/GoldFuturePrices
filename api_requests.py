@@ -41,35 +41,3 @@ def make_gapi_request():
     except requests.exceptions.RequestException as e:
         print("Error:", str(e))
         return None  # Handle error gracefully
-
-
-#     try:
-#         response = requests.get(url, headers=headers)
-#         response.raise_for_status()
-
-#         result = response.json()  # Convert response to JSON
-
-#         # Ensure 'Date' is in the correct format and type
-#         result['Date'] = int(result['timestamp'])  # Use 'timestamp' directly as it's already an integer
-
-#         return {
-#             'Date': result['Date'],
-#             'Open': result['open_price'],
-#             'High': result['high_price'],
-#             'Low': result['low_price'],
-#             'Close': result['price']
-#         }
-#     except requests.exceptions.RequestException as e:
-#         print("Error:", str(e))
-#         return None  # Handle error gracefully
-
-# result = make_gapi_request()
-# print(result)
-
-# # Create a DataFrame with a single row
-# api_df = pd.DataFrame([result])
-
-# # Optionally, you can set the index if needed
-# # api_df.set_index('Date', inplace=True)
-
-# print(api_df)
